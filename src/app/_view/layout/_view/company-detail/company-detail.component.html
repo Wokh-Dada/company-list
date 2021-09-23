@@ -1,0 +1,25 @@
+<div>
+  <h1>Детальная информация о {{payload?.suffix  }} "{{payload?.business_name }}"</h1>
+
+  <div>
+    <div class="logo">
+      <img [src]="payload?.logo" alt="">
+    </div>
+<!--    <div>-->
+<!--      Название компании: -->
+<!--    </div>-->
+    <div class="detail-info">
+      Вид детяельности: {{payload?.industry }}
+    </div>
+    <div class="detail-info">
+      Слоган: {{payload?.catch_phrase }}
+    </div>
+    <div class="detail-info">
+      Контактный номер телефона: {{payload?.phone_number }}
+    </div>
+    <div class="detail-info">
+      Адрес: {{payload?.full_address }}
+    </div>
+    <div>id: {{payload?.id}}</div>
+  </div>
+</div>

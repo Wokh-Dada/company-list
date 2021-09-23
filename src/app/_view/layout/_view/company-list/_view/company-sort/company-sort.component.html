@@ -1,0 +1,23 @@
+<div class="sort">
+  <h4 class="sort__title">Сортировка по:</h4>
+  <div class="sort__name">
+    <input
+      [checked]="sortChecked('business_name')"
+      (click)="sortChange('business_name')"
+      type="radio"
+    > Название
+  </div>
+  <div (click)="sortChange('type')" class="sort__type">
+    <input
+      [checked]="sortChecked('type')"
+      type="radio"
+    > Тип
+  </div>
+  <div class="sort__industry">
+    <input
+      [checked]="sortChecked('industry')"
+      (click)="sortChange('industry')"
+      type="radio"
+    > Вид деятельности
+  </div>
+</div>

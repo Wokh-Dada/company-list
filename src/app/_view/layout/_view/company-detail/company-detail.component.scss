@@ -1,0 +1,17 @@
+.logo {
+  padding: 0 .5rem;
+  margin-right: .5rem;
+
+  img {
+    width: 86px;
+    height: 86px;
+    object-position: center;
+    object-fit: contain;
+    overflow: hidden;
+    //border-radius: 50%;
+  }
+}
+
+.detail-info{
+  margin-bottom: .4rem;
+}

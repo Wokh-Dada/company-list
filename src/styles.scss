@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~reset-css';
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #FAFAFA;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+button, input {
+  outline: none;
+}

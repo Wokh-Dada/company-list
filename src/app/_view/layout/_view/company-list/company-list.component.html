@@ -1,0 +1,40 @@
+<div *ngIf="payload$|async;else skeleton" class="company-list-container">
+  <ul>
+    <li
+      *ngFor="let item of payload$ | async | sortBy :reverse: key  "
+      [routerLink]="['/detail/', item.id]"
+      [queryParams]="{'id': item.id}"
+      class="company-list-item"
+    >
+      <div class="company-list-item__logo">
+        <img [src]="item.logo" alt="">
+      </div>
+      <div class="company-list-item__info-container">
+        <div class="company-list-item__info">
+          Наименование: <span title="name"> {{item.suffix}} "{{item.business_name}}" </span>
+        </div>
+        <div class="company-list-item__info">
+          Вид деятельности: <span title="address">{{item.industry}}</span>
+        </div>
+        <div class="company-list-item__info">
+          Тип: <span title="address">{{item.type}}</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <aside class="filter-sort-container">
+    <div class="filter-container">
+      <app-company-filter></app-company-filter>
+    </div>
+
+    <div class="sort-container">
+      <app-company-sort (sort)="sort($event)"></app-company-sort>
+    </div>
+  </aside>
+</div>
+
+<ng-template #skeleton>
+  <div class="skeleton">
+    Ждемс...
+  </div>
+</ng-template>

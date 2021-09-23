@@ -1,0 +1,39 @@
+<div>
+  <form [formGroup]="form">
+    <div class="filter-list__input">
+      <input
+        formControlName="search"
+        (ngModelChange)="searchChange(this.form.get('search')?.value)"
+        type="text" placeholder="Поиск"
+      >
+    </div>
+
+    <div class="type-selection">
+      Выбрать тип компании
+      <select
+        (click)="typeChange(form.get('type')?.value)"
+        [name]="form.get('type')?.value"
+        formControlName="type"
+      >
+        <option
+          *ngFor="let type of types"
+          [value]="type"
+        >{{type}}</option>
+      </select>
+    </div>
+
+    <div class="type-selection">
+      Выбрать видам деятельности компании
+      <select
+        (click)="industryChange(form.get('industry')?.value)"
+        [name]="form.get('industry')?.value"
+        formControlName="industry"
+      >
+        <option
+          *ngFor="let industry of industries"
+          [value]="industry"
+        >{{industry}}</option>
+      </select>
+    </div>
+  </form>
+</div>

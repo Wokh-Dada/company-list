@@ -1,0 +1,20 @@
+.sort {
+
+}
+
+.sort__title {
+  font-weight: 700;
+  margin-bottom: .75rem;
+}
+
+.sort__name, .sort__type, .sort__industry {
+  display: flex;
+  align-items: center;
+  margin-bottom: .5rem;
+  font-size: .9rem;
+}
+
+.sort__name input, .sort__type input, .sort__industry input {
+  margin-left: 0;
+  cursor: pointer;
+}
