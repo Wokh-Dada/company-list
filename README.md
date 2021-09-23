@@ -1,27 +1,37 @@
-# CompanyList
+## # Endpoint
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+Endpoint для получения списка компаний https://random-data-api.com/api/company/random_company?size=100 , где size кол-во компаний в запросе
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## # Для junior
 
-## Code scaffolding
+1. Реализовать роутинг приложения.
+   В приложении должен быть layout - приложения (компонента layout-component).
+   А также 3 роута:
+  - /list или / , который ведёт на компоненту company-list, список компаний.
+  - /detail/:id , который ведёт на компоненту company-detail, детальную страницу о компании.
+  - /map , который ведёт на компоненту company-yandex-map, отображение компаний на карте.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. Реализовать страницу со списком компаний.
+  - Список должен состоять как минимум из 2-х компонент:
+    - company-item, в которой отображаются данные: логотип (logo), название компании (в формате: suffix "business_name"), вид деятельности (industry) и тип (type).
+    - company-list, в которой содержится массив company-item.
+  - Сервис, для запросов на endpoint.
+  - В html отображается массив company-item.
 
-## Build
+3. Реализовать страницу с подробной информации о конкретной компании (компонента company-detail).
+  - Переход на данную страницу происходит при клике на компанию в списке (компонента company-item).
+  - В company-detail должны быть следующие данные: логотип (logo), название компании (в формате: suffix "business_name"), вид деятельности (industry), слоган (catch_phrase), контактный номер телефона (phone_number), адрес (full_address).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+4. На странице со списком компаний (компонента company-list) реализовать функционал сортировки.
+  - Реализовать компоненту company-sort, которая генерирует эвент для сортировки списка компаний.
+  - Сортировать по: названию, типу, виду деятельности.
+  - При клике по сорт-полю, должен автоматически перестраиваться список.
+  - Связать сортировку с компонентой company-list через Input/Output или через сервис.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+5.  На страницу со списком компаний (компонента company-list) добавить функционал фильтрации.
+  - Реализовать компоненту company-filter, которая генерирует эвент для фильтрации списка компаний.
+  - Контролы в фильтре: text-box поиск по названию, select-box с типами компаний, select-box с видами деятельности.
+  - Это должна быть форма, реализованная с помощью модуля ReactiveForm.
+  - При изменение поля, должна автоматически происходить фильтрация списка компаний, компоненты company-list.
+  - Связать фильтрацию с компонентой company-list через Input/Output или через сервис.
