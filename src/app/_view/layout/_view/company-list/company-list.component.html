@@ -1,9 +1,10 @@
 <div *ngIf="payload$|async;else skeleton" class="company-list-container">
   <ul>
     <li
-      *ngFor="let item of payload$ | async | sortBy :reverse: key  "
+      *ngFor="let item of payload$ | async | sortBy :reverse: key"
       [routerLink]="['/detail/', item.id]"
       [queryParams]="{'id': item.id}"
+      (click)="getCompanyData(item)"
       class="company-list-item"
     >
       <div class="company-list-item__logo">

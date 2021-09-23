@@ -44,9 +44,11 @@ export class CompanyListComponent implements OnInit, OnDestroy {
         this.payload$.next(rs)
       })
 
-    this.subscriptionForm$ = this.filterService.form$.pipe(delay(100)).subscribe((e) => {
-      this.payload$.next(this.filterService.filterChange(this.payload))
-    })
+    this.subscriptionForm$ = this.filterService.form$
+      .pipe(delay(100))
+      .subscribe((e) => {
+        this.payload$.next(this.filterService.filterChange(this.payload))
+      })
 
   }
 
@@ -61,5 +63,9 @@ export class CompanyListComponent implements OnInit, OnDestroy {
   sort(key: string): void {
     this.key = key;
     this.reverse = !this.reverse;
+  }
+
+  getCompanyData(item: IRandomCompany) {
+    this.dataService.getCompanyData(item)
   }
 }

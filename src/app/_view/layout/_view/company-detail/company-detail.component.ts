@@ -10,7 +10,7 @@ import {IRandomCompany} from "../../../../_res/_types/types";
 })
 export class CompanyDetailComponent implements OnInit, OnDestroy {
   /**/
-  payload?: IRandomCompany;
+  payload?: IRandomCompany = this.dataService.companyData;
 
   subscription = new Subscription();
 
@@ -20,12 +20,13 @@ export class CompanyDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.subscription = this.dataService.getCompanyId()
-      .subscribe((data: IRandomCompany) => this.payload = data)
+    // this.payload = ;
+    // this.subscription = this.dataService.getCompanyData()
+    //   .subscribe((data: IRandomCompany) => this.payload = data)
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 
 }

@@ -1,3 +1,10 @@
+.skeleton {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .logo {
   padding: 0 .5rem;
   margin-right: .5rem;
@@ -8,10 +15,9 @@
     object-position: center;
     object-fit: contain;
     overflow: hidden;
-    //border-radius: 50%;
   }
 }
 
-.detail-info{
+.detail-info {
   margin-bottom: .4rem;
 }
